@@ -1,0 +1,13 @@
+Source: elasticsearch
+Section: java
+Priority: extra
+Maintainer: Rui Lopes <rgl@ruilopes.com>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+Homepage: http://www.elasticsearch.org/
+
+Package: elasticsearch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, jsvc
+Description: A Distributed RESTful Search Engine
+ ElasticSearch is a distributed RESTful search engine built for the cloud.

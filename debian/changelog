@@ -1,0 +1,23 @@
+elasticsearch (0.16.0-0ubuntu1) lucid; urgency=low
+
+  * New upstream release.
+
+ -- Rui Lopes <rgl@ruilopes.com>  Mon, 25 Apr 2011 18:06:52 +0100
+
+elasticsearch (0.15.2-0ubuntu3) lucid; urgency=low
+
+  * Create and use the system account "elasticsearch" to run the daemon. 
+
+ -- Rui Lopes <rgl@ruilopes.com>  Mon, 25 Apr 2011 12:15:23 +0100
+
+elasticsearch (0.15.2-0ubuntu2) lucid; urgency=low
+
+  * Fix package build...
+
+ -- Rui Lopes <rgl@ruilopes.com>  Mon, 25 Apr 2011 10:17:35 +0100
+
+elasticsearch (0.15.2-0ubuntu1) lucid; urgency=low
+
+  * Initial release.
+
+ -- Rui Lopes <rgl@ruilopes.com>  Sat, 23 Apr 2011 13:17:09 +0100

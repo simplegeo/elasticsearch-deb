@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+do_purge()
+{
+    for d in data logs; do
+        rm -rf /opt/elasticsearch/$d
+    done
+}
+
+case "$1" in
+    purge)
+        do_purge
+    ;;
+
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+        ;;
+
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+esac
+
+#DEBHELPER#

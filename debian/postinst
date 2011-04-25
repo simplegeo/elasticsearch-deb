@@ -1,0 +1,49 @@
+#!/bin/sh
+
+set -e
+
+USER="elasticsearch"
+ID="/usr/bin/id"
+ADDUSER="/usr/sbin/adduser"
+CHOWN="/bin/chown"
+INSTALL="/usr/bin/install"
+
+do_configure()
+{
+    if $ID $USER >/dev/null 2>&1; then
+       UID=`$ID --user $USER`
+    else
+       UID=""
+    fi
+
+    if [ "x$UID" = "x" ]; then
+        $ADDUSER \
+            --system \
+            --disabled-password \
+            --disabled-login \
+            --home /opt/elasticsearch \
+            --no-create-home \
+            --group $USER
+    fi
+
+    for d in data logs; do
+        $INSTALL -d -o $USER -g $USER /opt/elasticsearch/$d
+        $CHOWN -R $USER:$USER /opt/elasticsearch/$d
+    done
+}
+
+case "$1" in
+    configure)
+        do_configure
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#

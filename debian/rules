@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+export DH_VERBOSE=1
+
+DESTDIR=${PWD}/debian/elasticsearch/opt/elasticsearch
+
+ifeq (${DEB_BUILD_ARCH}, amd64)
+LIB_SIGAR_ARCH=amd64
+else
+LIB_SIGAR_ARCH=x86
+endif
+
+override_dh_install:
+	install -d ${DESTDIR}
+	install -d ${DESTDIR}/bin
+	install -d ${DESTDIR}/config
+	install -d ${DESTDIR}/lib
+	install -d ${DESTDIR}/lib/sigar
+	cp bin/* ${DESTDIR}/bin/
+	cp config/* ${DESTDIR}/config/
+	cp lib/*.jar ${DESTDIR}/lib/
+	cp lib/sigar/*.jar ${DESTDIR}/lib/sigar/
+	cp lib/sigar/libsigar-${LIB_SIGAR_ARCH}-linux.so ${DESTDIR}/lib/sigar/
+
+%:
+	dh  $@
