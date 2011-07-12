@@ -4,7 +4,7 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-DESTDIR=${PWD}/debian/elasticsearch/opt/elasticsearch
+DESTDIR=${PWD}/debian/elasticsearch/usr/share/elasticsearch
 
 ifeq (${DEB_BUILD_ARCH}, amd64)
 LIB_SIGAR_ARCH=amd64
