@@ -9,6 +9,8 @@ Homepage: http://www.elasticsearch.org/
 
 Package: elasticsearch
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, jsvc
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ jsvc,
+ sun-java6-jre
 Description: A Distributed RESTful Search Engine
  ElasticSearch is a distributed RESTful search engine built for the cloud.
