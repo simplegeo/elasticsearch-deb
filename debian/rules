@@ -4,25 +4,27 @@
 # Uncomment this to turn on verbose mode.
 export DH_VERBOSE=1
 
-DESTDIR=${PWD}/debian/elasticsearch/usr/share/elasticsearch
-
 ifeq (${DEB_BUILD_ARCH}, amd64)
 LIB_SIGAR_ARCH=amd64
 else
 LIB_SIGAR_ARCH=x86
 endif
 
+DEST = $(DEB_DESTDIR)/usr/share/elasticsearch
+
 override_dh_install:
-	install -d ${DESTDIR}
-	install -d ${DESTDIR}/bin
-	install -d ${DESTDIR}/config
-	install -d ${DESTDIR}/lib
-	install -d ${DESTDIR}/lib/sigar
-	cp bin/* ${DESTDIR}/bin/
-	cp config/* ${DESTDIR}/config/
-	cp lib/*.jar ${DESTDIR}/lib/
-	cp lib/sigar/*.jar ${DESTDIR}/lib/sigar/
-	cp lib/sigar/libsigar-${LIB_SIGAR_ARCH}-linux.so ${DESTDIR}/lib/sigar/
+	install -d $(DEST)
+	install -d $(DEST)/bin
+	install -d $(DEST)/lib
+	install -d $(DEST)/lib/sigar
+	install -d $(DEB_DESTDIR)/etc/elasticsearch
+	install -d $(DEB_DESTDIR)/var/lib/elasticsearch
+	install -d $(DEB_DESTDIR)/var/log/elasticsearch
+	cp bin/* $(DEST)/bin/
+	cp config/* $(DEB_DESTDIR)/etc/elasticsearch
+	cp lib/*.jar $(DEST)/lib/
+	cp lib/sigar/*.jar $(DEST)/lib/sigar/
+	cp lib/sigar/libsigar-${LIB_SIGAR_ARCH}-linux.so $(DEST)/lib/sigar/
 
 %:
 	dh  $@
