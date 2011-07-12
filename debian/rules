@@ -10,6 +10,7 @@ else
 LIB_SIGAR_ARCH=x86
 endif
 
+DEB_DESTDIR = debian/elasticsearch
 DEST = $(DEB_DESTDIR)/usr/share/elasticsearch
 
 override_dh_install:
