@@ -27,7 +27,7 @@ override_dh_install:
 	cp lib/*.jar $(DEST)/lib/
 	cp lib/sigar/*.jar $(DEST)/lib/sigar/
 	cp lib/sigar/libsigar-${LIB_SIGAR_ARCH}-linux.so $(DEB_DESTDIR)/usr/lib/sigar/
-	ln -s $(DEB_DESTDIR)/usr/lib/sigar/libsigar-${LIB_SIGAR_ARCH}-linux.so \
+	ln -s /usr/lib/sigar/libsigar-${LIB_SIGAR_ARCH}-linux.so \
 		$(DEST)/lib/sigar
 
 %:
