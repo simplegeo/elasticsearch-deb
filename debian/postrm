@@ -5,7 +5,7 @@ set -e
 do_purge()
 {
     for d in data logs; do
-        rm -rf /opt/elasticsearch/$d
+        rm -rf /usr/share/elasticsearch/$d
     done
 }
 

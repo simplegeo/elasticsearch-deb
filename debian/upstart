@@ -9,7 +9,7 @@ respawn
 
 script
   ES_USER=elasticsearch
-  ES_HOME=/opt/elasticsearch
+  ES_HOME=/usr/share/elasticsearch
   # TODO get these from /etc/default/elasticsearch
   ES_MIN_MEM=256m
   ES_MAX_MEM=1g

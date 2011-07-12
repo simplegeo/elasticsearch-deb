@@ -21,14 +21,14 @@ do_configure()
             --system \
             --disabled-password \
             --disabled-login \
-            --home /opt/elasticsearch \
+            --home /usr/share/elasticsearch \
             --no-create-home \
             --group $USER
     fi
 
     for d in data logs; do
-        $INSTALL -d -o $USER -g $USER /opt/elasticsearch/$d
-        $CHOWN -R $USER:$USER /opt/elasticsearch/$d
+        $INSTALL -d -o $USER -g $USER /usr/share/elasticsearch/$d
+        $CHOWN -R $USER:$USER /usr/share/elasticsearch/$d
     done
 }
 

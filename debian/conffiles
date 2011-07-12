@@ -1,2 +1,2 @@
-/opt/elasticsearch/config/elasticsearch.yml
-/opt/elasticsearch/config/logging.yml
+/etc/elasticsearch/elasticsearch.yml
+/etc/elasticsearch/logging.yml
