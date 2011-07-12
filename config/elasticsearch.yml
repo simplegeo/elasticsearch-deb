@@ -2,6 +2,10 @@
 #cluster:
 #  name: elasticsearch
 
+path:
+  data: /var/lib/elasticsearch
+  logs: /var/log/elasticsearch
+
 # Gateway Settings
 #gateway:
 #  recover_after_nodes: 1
