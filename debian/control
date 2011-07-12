@@ -1,7 +1,8 @@
 Source: elasticsearch
-Section: java
+Section: net
 Priority: extra
-Maintainer: Rui Lopes <rgl@ruilopes.com>
+Maintainer: SimpleGeo Nerds <nerds@simplegeo.com>
+Uploaders: Ian Eure <ian@simplegeo.com>
 Build-Depends: debhelper (>= 7)
 Standards-Version: 3.8.3
 Homepage: http://www.elasticsearch.org/
