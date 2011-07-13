@@ -1,3 +1,22 @@
+elasticsearch (0.16.2-0sg2) maverick; urgency=low
+
+  [ Ian Eure ]
+  * Fix install dir.
+  * Install stuff in more standard places.
+  * Fix locations for data & logs.
+  * Whoops, edited the wrong file.
+  * Fix.
+  * Remove conffiles, we put them in /etc now
+  * Update maintainers.
+  * Install libsigar .so files in the correct location, link them into .
+  * Fix
+  * Fix libsibar link path.
+  * Use the Sun JRE.
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Wed, 13 Jul 2011 22:46:44 +0000
+
 elasticsearch (0.16.2-0sg0) foss-development; urgency=low
 
   * New upstream version.
