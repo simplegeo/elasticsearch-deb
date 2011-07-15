@@ -1,3 +1,9 @@
+elasticsearch (0.16.4-0sg3) maverick; urgency=low
+
+  * UNRELEASED
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Fri, 15 Jul 2011 20:36:38 +0000
+
 elasticsearch (0.16.4-0sg0) foss-development; urgency=low
 
   * New upstream version.
