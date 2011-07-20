@@ -21,6 +21,8 @@ override_dh_install:
 	install -d $(DEB_DESTDIR)/usr/lib/sigar/
 	install -d $(DEB_DESTDIR)/etc/elasticsearch
 	install -d $(DEB_DESTDIR)/var/lib/elasticsearch
+	install -d $(DEB_DESTDIR)/var/lib/elasticsearch/data
+	install -d $(DEB_DESTDIR)/var/lib/elasticsearch/work
 	install -d $(DEB_DESTDIR)/var/log/elasticsearch
 	cp bin/* $(DEST)/bin/
 	cp config/* $(DEB_DESTDIR)/etc/elasticsearch
