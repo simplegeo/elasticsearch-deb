@@ -2,6 +2,13 @@
 #cluster:
 #  name: elasticsearch
 
+# Path Settings
+#path:
+#  conf: /path/to/conf
+#  data: /path/to/data
+#  work: /path/to/work
+#  logs: /path/to/logs
+
 # Gateway Settings
 #gateway:
 #  recover_after_nodes: 1
@@ -17,5 +24,7 @@
 # Unicast Discovery (disable multicast)
 #discovery:
 #  zen:
+#    minimum_master_nodes: 1
+#    ping.timeout: 3s
 #    ping.multicast.enabled: false
 #    ping.unicast.hosts: ["host1", "host2"]
