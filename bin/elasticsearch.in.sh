@@ -1,4 +1,4 @@
-ES_CLASSPATH=$ES_CLASSPATH:$ES_HOME/lib/elasticsearch-0.16.4.jar:$ES_HOME/lib/*:$ES_HOME/lib/sigar/*
+ES_CLASSPATH=$ES_CLASSPATH:$ES_HOME/lib/elasticsearch-0.17.0.jar:$ES_HOME/lib/*:$ES_HOME/lib/sigar/*
 
 if [ "x$ES_MIN_MEM" = "x" ]; then
     ES_MIN_MEM=256m
@@ -16,8 +16,6 @@ JAVA_OPTS="$JAVA_OPTS -Xmx${ES_MAX_MEM}"
 
 # reduce the per-thread stack size
 JAVA_OPTS="$JAVA_OPTS -Xss128k"
-
-JAVA_OPTS="$JAVA_OPTS -Djline.enabled=true"
 
 # Enable aggressive optimizations in the JVM
 #    - Disabled by default as it might cause the JVM to crash

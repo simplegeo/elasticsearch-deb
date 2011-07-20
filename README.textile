@@ -32,7 +32,7 @@ ElasticSearch is a distributed RESTful search engine built for the cloud. Featur
 
 h2. Getting Started
 
-Fist of all, DON'T PANIC. It will take 5 minutes to get the gist of what ElasticSearch is all about.
+First of all, DON'T PANIC. It will take 5 minutes to get the gist of what ElasticSearch is all about.
 
 h3. Installation
 
@@ -86,7 +86,7 @@ We can also use the JSON query language ElasticSearch provides instead of a quer
 curl -XGET 'http://localhost:9200/twitter/tweet/_search?pretty=true' -d '
 { 
     "query" : { 
-        "term" : { "user": "kimchy" } 
+        "text" : { "user": "kimchy" }
     } 
 }'
 </pre>
