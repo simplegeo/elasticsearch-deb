@@ -1,4 +1,4 @@
-ES_CLASSPATH=$ES_CLASSPATH:$ES_HOME/lib/elasticsearch-0.17.1.jar:$ES_HOME/lib/*:$ES_HOME/lib/sigar/*
+ES_CLASSPATH=$ES_CLASSPATH:$ES_HOME/lib/*:$ES_HOME/lib/sigar/*
 
 if [ "x$ES_MIN_MEM" = "x" ]; then
     ES_MIN_MEM=256m
@@ -20,10 +20,6 @@ JAVA_OPTS="$JAVA_OPTS -Xss128k"
 # Enable aggressive optimizations in the JVM
 #    - Disabled by default as it might cause the JVM to crash
 # JAVA_OPTS="$JAVA_OPTS -XX:+AggressiveOpts"
-
-# Enable reference compression, reducing memory overhead on 64bit JVMs
-#    - Disabled by default as it is not stable for Sun JVM before 6u19
-#JAVA_OPTS="$JAVA_OPTS -XX:+UseCompressedOops"
 
 JAVA_OPTS="$JAVA_OPTS -XX:+UseParNewGC"
 JAVA_OPTS="$JAVA_OPTS -XX:+UseConcMarkSweepGC"
