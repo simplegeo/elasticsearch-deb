@@ -38,6 +38,8 @@ script
   }
   ES_CLASSPATH=`expand_glob_path_list $ES_CLASSPATH`
 
+  ulimit -n 65535
+
   exec /usr/bin/jsvc \
     -home "$JAVA_HOME" \
     -user $ES_USER \
