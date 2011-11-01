@@ -1,4 +1,4 @@
-elasticsearch (0.17.6-0sg22) maverick; urgency=low
+elasticsearch (0.18.2-0sg22) maverick; urgency=low
 
   [ Derek Smith ]
   * Upgrade to 0.18
