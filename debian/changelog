@@ -1,4 +1,12 @@
 elasticsearch (0.17.6-0sg22) maverick; urgency=low
+  [ Derek Smith ]
+  * Upgrade to 0.18
+
+  [ SimpleGeo Nerds ]
+
+ -- SimpleGeo Nerds <nerds@simplegeo.com>  Mon, Nov 1 2011 17:43:39 +0000
+
+elasticsearch (0.17.6-0sg22) maverick; urgency=low
 
   [ Ian Eure ]
   * Increase FD limit to avoid starving ES & causing crashes.
