@@ -7,49 +7,11 @@ stop on shutdown
 
 respawn
 
+env ES_USER=elasticsearch
+env ES_HOME=/usr/share/elasticsearch
+env ES_MIN_MEM=256m
+env ES_MAX_MEM=1g
+
 script
-  ES_USER=elasticsearch
-  ES_HOME=/usr/share/elasticsearch
-  # TODO get these from /etc/default/elasticsearch
-  ES_MIN_MEM=256m
-  ES_MAX_MEM=1g
-  JAVA_HOME=/usr/lib/jvm/java-6-sun/jre
-
-  . $ES_HOME/bin/elasticsearch.in.sh
-
-  JAVA_OPTS="$JAVA_OPTS -Djline.enabled=false"
-
-  #JAVA_OPTS="-debug $JAVA_OPTS"
-
-  ES_CLASSPATH="$ES_CLASSPATH:/usr/share/java/commons-daemon.jar"
-
-  # NB jsvc 1.0.2 that ships with Ubuntu Lucid (10.04) does not expand the
-  #    -cp argument... so we have to do it ourselfs.
-  expand_glob_path_list()
-  {
-    result=""
-    old_IFS="$IFS"
-    IFS=:
-    for p in $1; do
-      result="$result:$p"
-    done
-    IFS="$old_IFS"
-    echo "$result"
-  }
-  ES_CLASSPATH=`expand_glob_path_list $ES_CLASSPATH`
-
-  ulimit -n 65535
-
-  exec /usr/bin/jsvc \
-    -home "$JAVA_HOME" \
-    -user $ES_USER \
-    $JAVA_OPTS \
-    -Delasticsearch \
-    -Des.path.home="$ES_HOME" \
-    -cp "$ES_CLASSPATH" \
-    -jvm server \
-    -procname $UPSTART_JOB \
-    -nodetach \
-    -pidfile "/var/run/$UPSTART_JOB.pid" \
-    org.elasticsearch.bootstrap.ElasticSearch
+  su -s /bin/sh -c '$ES_HOME/bin/elasticsearch -f -Des.path.home="$ES_HOME"' $ES_USER
 end script
