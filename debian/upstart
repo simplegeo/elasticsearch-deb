@@ -12,6 +12,8 @@ env ES_HOME=/usr/share/elasticsearch
 env ES_MIN_MEM=256m
 env ES_MAX_MEM=1g
 
+limit nofile 32000 32000
+
 script
-  su -s /bin/sh -c '$ES_HOME/bin/elasticsearch -f -Des.path.home="$ES_HOME"' $ES_USER
+  su -s /bin/sh -c '$ES_HOME/bin/elasticsearch -f -Des.max-open-files=true -Des.path.home="$ES_HOME"' $ES_USER
 end script
