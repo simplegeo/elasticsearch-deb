@@ -26,10 +26,8 @@ do_configure()
             --group $USER
     fi
 
-    for d in data logs; do
-        $INSTALL -d -o $USER -g $USER /usr/share/elasticsearch/$d
-        $CHOWN -R $USER:$USER /usr/share/elasticsearch/$d
-    done
+    $INSTALL -d -o $USER -g $USER /var/log/elasticsearch
+    $INSTALL -d -o $USER -g $USER /var/lib/elasticsearch
 }
 
 case "$1" in
